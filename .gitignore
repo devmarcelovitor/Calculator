@@ -5,13 +5,11 @@ target/
 .kotlin
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.idea/
 *.iws
 *.iml
 *.ipr
+out/
 
 ### Eclipse ###
 .apt_generated
@@ -34,6 +32,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Logs e ambiente ###
+*.log
+logs/
+.env
 
 ### Mac OS ###
 .DS_Store
