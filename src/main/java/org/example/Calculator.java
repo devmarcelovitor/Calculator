@@ -1,6 +1,5 @@
 package org.example;
 import java.awt.*;
-import java.awt.event.*;
 import java.util.Arrays;
 import javax.swing.*;
 import javax.swing.border.LineBorder;
@@ -8,9 +7,9 @@ import javax.swing.border.LineBorder;
 public class Calculator {
     int boardWidth = 500;
     int boardHeight = 600;
-    Color customLightGray = new Color(192, 192, 192);
-    Color customDarkGray = new Color(95, 9, 0);
-    Color customWhite = new Color(34, 34, 34);
+    Color customGray = new Color(51, 51, 51);
+    Color customDiscord = new Color(88, 101, 242);
+    Color customWhite =  new Color(165, 165, 165);
     Color customBlack = new Color(0, 0, 0);
 
     String[] buttonValues = {
@@ -43,8 +42,8 @@ public class Calculator {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(new BorderLayout());
 
-        displayLabel.setBackground(customWhite);
-        displayLabel.setForeground(Color.white);
+        displayLabel.setBackground(customBlack);
+        displayLabel.setForeground(Color.gray);
         displayLabel.setFont(new Font("Arial", Font.PLAIN, 60));
         displayLabel.setHorizontalAlignment(JLabel.RIGHT);
         displayLabel.setText("0");
@@ -55,7 +54,7 @@ public class Calculator {
         frame.add(displayPanel, BorderLayout.NORTH);
 
         buttonPanel.setLayout(new GridLayout(5, 4));
-        buttonPanel.setBackground(customBlack);
+        buttonPanel.setBackground(customGray);
         frame.add(buttonPanel);
 
 
@@ -66,6 +65,24 @@ public class Calculator {
             String buttonValue = buttonValues[i];
             button.setFont(new Font("Arial", Font.PLAIN, 60));
             button.setText(buttonValue);
+            button.setFocusable(false);
+            button.setBorder(new LineBorder(customBlack));
+
+            if(Arrays.asList(topSymbols).contains(buttonValue)){
+                button.setBackground(customWhite);
+                button.setForeground(customBlack);
+
+            }
+            else if(Arrays.asList(rightSymbols).contains(buttonValue)){
+                button.setBackground(customDiscord);
+                button.setForeground(customBlack);
+            }
+            else{
+                button.setBackground(customGray);
+                button.setForeground(customBlack);
+            }
+
+
             buttonPanel.add(button);
         }
 
