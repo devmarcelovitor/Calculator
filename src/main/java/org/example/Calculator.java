@@ -13,12 +13,23 @@ public class Calculator {
     Color customWhite = new Color(34, 34, 34);
     Color customBlack = new Color(0, 0, 0);
 
+    String[] buttonValues = {
+            "AC", "+/-", "%", "÷",
+            "7", "8", "9", "×",
+            "4", "5", "6", "-",
+            "1", "2", "3", "+",
+            "0", ".", "√", "="
+    };
+    String[] rightSymbols = {"÷", "×", "-", "+", "="};
+    String[] topSymbols = {"AC", "+/-", "%"};
+
 
 
 
     JFrame frame =  new JFrame("Calculator");
     JLabel displayLabel  = new JLabel();
     JPanel displayPanel = new JPanel();
+    JPanel buttonPanel = new JPanel();
 
 
 
@@ -42,6 +53,23 @@ public class Calculator {
         displayPanel.setLayout(new BorderLayout());
         displayPanel.add(displayLabel);
         frame.add(displayPanel, BorderLayout.NORTH);
+
+        buttonPanel.setLayout(new GridLayout(7, 6));
+        buttonPanel.setBackground(customBlack);
+        frame.add(buttonPanel);
+
+
+        for(int i = 0; i < buttonValues.length; i++){
+            JButton button = new JButton();
+            String buttonValue = buttonValues[i];
+            button.setFont(new Font("Arial", Font.PLAIN, 60));
+            button.setText(buttonValue);
+            buttonPanel.add(button);
+        }
+
+
+
+
 
 
 
