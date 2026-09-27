@@ -54,9 +54,11 @@ public class Calculator {
         displayPanel.add(displayLabel);
         frame.add(displayPanel, BorderLayout.NORTH);
 
-        buttonPanel.setLayout(new GridLayout(7, 6));
+        buttonPanel.setLayout(new GridLayout(5, 4));
         buttonPanel.setBackground(customBlack);
         frame.add(buttonPanel);
+
+
 
 
         for(int i = 0; i < buttonValues.length; i++){
